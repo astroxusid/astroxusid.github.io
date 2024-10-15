@@ -43,8 +43,6 @@
             overflow-x: hidden;
         }
 
-
-
         /*-----Splash Screen-----*/
 
         #splash-screen {
@@ -305,22 +303,20 @@
         /*------Main Menu Home------- */
         .main-menu {
             background-image: url('img/Home/BG Home.png');
-            
-            background-size: 100% 100%;
-            background-position: center top;
-            background-repeat: no-repeat;
+            background-size: contain;
+            background-repeat: no-repeat ;
+            background-color: #C32231;
+            background-position: center;
             height: 100vh;
             display: flex;
             justify-content: flex-end;
             align-items: center;
             padding: 2rem;
             position: relative;
-    
-            transition: background-image 0.3s ease, opacity 0.5s ease-in-out;
+            transition: background-image 0.3s ease;
 
-            opacity: 0;*/
-
-            
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
         .main-menu.animate {
@@ -553,23 +549,17 @@
  /*-------About Section-------*/
 
  .about-us {
-
     background-image: url('img/Home/BG About Astroxus.png');
     background-size: contain;
-    background-position: center;
+    background-color: #343742;
     background-repeat: no-repeat;
-    background-color: #343742; /* Added background color */
-    height: 100vh;
-    width: 100%;
-    position: relative;
+    background-position: center;
+    min-height: 100vh; /* Gunakan min-height alih-alih height */
     display: flex;
     justify-content: center;
-    padding: 15vh;
-    overflow: hidden;
-    
-    transition: background-image 0.3s ease, opacity 0.5s ease-in-out;
-    opacity: 0;
-
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Mencegah konten keluar dari section */
 }
 
 .about-us.animate #aboutTitle {
@@ -582,28 +572,30 @@
 }
 
 .about-text {
+    text-align: center;
     color: white;
     font-family: 'Agency FB', sans-serif;
-    max-width: 80%; /* Membuat teks lebih rapat secara horizontal */
-    line-height: 1.5; /* Mengurangi spasi antar baris */
-    /*max-width: 600px;*/
-    font-size: 1vw;
-
-    
+    max-width: 80%;
+    padding: 20px;
+    position: absolute; /* Posisi absolut untuk kontrol lebih baik */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Pusatkan secara vertikal dan horizontal */
+    width: 100%; /* Gunakan lebar penuh */
 }
 
 #aboutTitle {
-        font-size: 8vh; /*4rem;*/
-        color: #ffffff;
+        font-size: 4rem;
+        color: #ffffff; /* Warna teks putih */
         text-shadow: 
             0 0 4px rgba(255, 255, 255, 0.8),
             0 0 8px rgba(255, 255, 255, 0.8);
-        -webkit-text-stroke: 1px #ffffff;
+        -webkit-text-stroke: 1px #ffffff; /* Memberikan outline putih */
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 2px;
-
-        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-top: 3rem;
 
         opacity: 0;
         transform: translateY(-20px);
@@ -612,12 +604,9 @@
 
 
 #aboutDescription {
-    font-size: 2vw; /*2rem;*/ /* Mengurangi ukuran font untuk membuat teks lebih rapat */
-    margin-top: 0.2rem;/* Mengurangi jarak antar paragraf */
+    font-size: 1.5rem; /* Mengurangi ukuran font untuk membuat teks lebih rapat */
+    margin-top: 0.2rem; /* Mengurangi jarak antar paragraf */
     animation: slideInLeft 2s ease forwards;
-    color: white;
-
-    text-align: center;
 
     opacity: 0;
     transform: translateY(20px);
@@ -676,40 +665,40 @@
 
 
 /* Media Queries */
-/*@media (max-width: 1920px) {
+@media (max-width: 1920px) {
     #aboutTitle {
         font-size: 5rem;
-        margin-top: -550px;
+        margin-top: -28rem;
     }
     #aboutDescription {
         font-size: 2.7rem;
         margin-top: 40px;
     }
-}*/
+}
 
-/*@media (max-width: 1366px) {
+@media (max-width: 1366px) {
     #aboutTitle {
         font-size: 3rem;
-        margin-top: -390px;
+        margin-top: -20rem;
     }
     #aboutDescription {
         font-size: 1.9rem;
         margin-top: 40px;
     }
-}*/
+}
 
 @media (max-width: 768px) {
     .about-us {
         background-image: url('img/Home/Mobile-About-Background.png');
         padding-top: 5%;
     }
-    #aboutTitle {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+    #aboutTitle {        
+        font-size: 2.9rem;
+        margin-top: -30rem;
     }
     #aboutDescription {
-        font-size: 0.8rem;
-        margin-top: 0.5rem;
+        font-size: 1.9rem;
+        margin-top: 0.2rem;
         line-height: 1.3;
     }
 }
@@ -733,7 +722,7 @@
 @media (max-width: 375px) {
     #aboutTitle {
         font-size: 1.2rem;
-        margin-top: -15rem;
+        margin-top: -18rem;
     }
     #aboutDescription {
         font-size: 1rem;
@@ -771,13 +760,15 @@
 
 .product-section {
         background-image: url('img/Home/BG OUR GAMES.png');
-        background-size: 100% 100%;/*cover;*/
-        background-position: top center;
-        min-height: 115vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #343742;
+        background-position: center;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 150px 0 50px; /* Menambahkan padding-top lebih besar */
+        padding: 120px 0 50px; /* Menambahkan padding-top lebih besar */
         overflow-y: auto;
 
         opacity: 0;
@@ -1695,18 +1686,14 @@
         </div>
     </section>
 
-    <!-- Aboud Us -->
-
     <section class="about-us animate-on-scroll">
         <div class="about-text">
-            <h1 id="aboutTitle">About Us</h1> <!-- id="aboutTitle" -->    
+            <h1 id="aboutTitle">About Us</h1>
             <p id="aboutDescription">Innovative game studio that develops 3D and 2D games while keeping up with the latest trends. We have a team of experienced professionals committed to creating high-quality games that meet market and societal needs. With one game already released and available, we continue to strive to deliver entertaining and valuable gaming experiences</p>
            
         </div>
     </section>
-
-    <!-- Games -->
-
+    
     <section class="product-section animate-on-scroll">
         <h2 class="section-title" id="gameTitle">Choose Your Game</h2>
         <div class="cards-container">
@@ -1758,8 +1745,6 @@
         </div>
     </section>
 
-    <!-- Contact -->
-
     <section class="contact-section animate-on-scroll">
         <div class="contact-background"></div>
         <h2 id="contact-us" class="section-title">Contact Us</h2>
@@ -1789,7 +1774,6 @@
 
     <div id="notification" class="notification">Stay Tuned!</div>
 
-    <br>
 
     <footer>
         <div class="footer-logo">
@@ -2161,7 +2145,8 @@ document.ondragstart = function() { return false; };
 
 console.log = function() {}; // Menonaktifkan console.log
 console.warn = function() {}; // Menonaktifkan console.warn
-console.error = function() {}; // Menonaktifkan console.error*/
+console.error = function() {}; // Menonaktifkan console.error
+*/
 
     </script>
 </body>
