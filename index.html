@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astroxus | Studio</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 
@@ -556,31 +555,20 @@
  .about-us {
 
     background-image: url('img/Home/BG About Astroxus.png');
-
-    background-size: 100% 100%; /* Gambar menutupi seluruh elemen */
-    background-position: center; /* Memusatkan gambar */
-    
-    color: ;
-
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #343742; /* Added background color */
     height: 100vh;
     width: 100%;
-    display: flex;
     position: relative;
-
-    background-repeat: no-repeat;
-
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
-
     padding: 15vh;
-
     overflow: hidden;
-
-    transition: background-image 0.3s ease;
-
+    
+    transition: background-image 0.3s ease, opacity 0.5s ease-in-out;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 
 }
 
