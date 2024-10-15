@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astroxus | Studio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 
@@ -42,6 +43,8 @@
             color: #ffffff;
             overflow-x: hidden;
         }
+
+
 
         /*-----Splash Screen-----*/
 
@@ -303,18 +306,22 @@
         /*------Main Menu Home------- */
         .main-menu {
             background-image: url('img/Home/BG Home.png');
-            background-size: cover;
-            background-position: center;
+            
+            background-size: 100% 100%;
+            background-position: center top;
+            background-repeat: no-repeat;
             height: 100vh;
             display: flex;
             justify-content: flex-end;
             align-items: center;
             padding: 2rem;
             position: relative;
-            transition: background-image 0.3s ease;
+    
+            transition: background-image 0.3s ease, opacity 0.5s ease-in-out;
 
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            opacity: 0;*/
+
+            
         }
 
         .main-menu.animate {
@@ -547,19 +554,34 @@
  /*-------About Section-------*/
 
  .about-us {
+
     background-image: url('img/Home/BG About Astroxus.png');
-    background-size: cover;
-    background-position: center;
+
+    background-size: contain ; /*100% 100%;*/ /* Gambar menutupi seluruh elemen */
+    background-position: center; /* Memusatkan gambar */
+    
+    color: ;
+
     height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-top: 10%; /* Menggeser konten sedikit ke atas */
+    /*align-items: center;*/
+
+    padding: 15vh;
+
+    overflow: hidden;
+
     transition: background-image 0.3s ease;
 
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+
 }
 
 .about-us.animate #aboutTitle {
@@ -572,24 +594,28 @@
 }
 
 .about-text {
-    text-align: center;
     color: white;
     font-family: 'Agency FB', sans-serif;
     max-width: 80%; /* Membuat teks lebih rapat secara horizontal */
     line-height: 1.5; /* Mengurangi spasi antar baris */
+    /*max-width: 600px;*/
+    font-size: 1vw;
+
+    
 }
 
 #aboutTitle {
-        font-size: 4rem;
-        color: #ffffff; /* Warna teks putih */
+        font-size: 8vh; /*4rem;*/
+        color: #ffffff;
         text-shadow: 
             0 0 4px rgba(255, 255, 255, 0.8),
             0 0 8px rgba(255, 255, 255, 0.8);
-        -webkit-text-stroke: 1px #ffffff; /* Memberikan outline putih */
+        -webkit-text-stroke: 1px #ffffff;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin-bottom: 1rem;
+
+        text-align: center;
 
         opacity: 0;
         transform: translateY(-20px);
@@ -598,9 +624,12 @@
 
 
 #aboutDescription {
-    font-size: 1.5rem; /* Mengurangi ukuran font untuk membuat teks lebih rapat */
-    margin-top: 0.5rem; /* Mengurangi jarak antar paragraf */
+    font-size: 2vw; /*2rem;*/ /* Mengurangi ukuran font untuk membuat teks lebih rapat */
+    margin-top: 0.2rem;/* Mengurangi jarak antar paragraf */
     animation: slideInLeft 2s ease forwards;
+    color: white;
+
+    text-align: center;
 
     opacity: 0;
     transform: translateY(20px);
@@ -659,7 +688,7 @@
 
 
 /* Media Queries */
-@media (max-width: 1920px) {
+/*@media (max-width: 1920px) {
     #aboutTitle {
         font-size: 5rem;
         margin-top: -550px;
@@ -668,9 +697,9 @@
         font-size: 2.7rem;
         margin-top: 40px;
     }
-}
+}*/
 
-@media (max-width: 1366px) {
+/*@media (max-width: 1366px) {
     #aboutTitle {
         font-size: 3rem;
         margin-top: -390px;
@@ -679,7 +708,7 @@
         font-size: 1.9rem;
         margin-top: 40px;
     }
-}
+}*/
 
 @media (max-width: 768px) {
     .about-us {
@@ -754,13 +783,13 @@
 
 .product-section {
         background-image: url('img/Home/BG OUR GAMES.png');
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
+        background-size: 100% 100%;/*cover;*/
+        background-position: top center;
+        min-height: 115vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 120px 0 50px; /* Menambahkan padding-top lebih besar */
+        padding: 150px 0 50px; /* Menambahkan padding-top lebih besar */
         overflow-y: auto;
 
         opacity: 0;
@@ -1678,14 +1707,18 @@
         </div>
     </section>
 
+    <!-- Aboud Us -->
+
     <section class="about-us animate-on-scroll">
         <div class="about-text">
-            <h1 id="aboutTitle">About Us</h1>
+            <h1 id="aboutTitle">About Us</h1> <!-- id="aboutTitle" -->    
             <p id="aboutDescription">Innovative game studio that develops 3D and 2D games while keeping up with the latest trends. We have a team of experienced professionals committed to creating high-quality games that meet market and societal needs. With one game already released and available, we continue to strive to deliver entertaining and valuable gaming experiences</p>
            
         </div>
     </section>
-    
+
+    <!-- Games -->
+
     <section class="product-section animate-on-scroll">
         <h2 class="section-title" id="gameTitle">Choose Your Game</h2>
         <div class="cards-container">
@@ -1737,6 +1770,8 @@
         </div>
     </section>
 
+    <!-- Contact -->
+
     <section class="contact-section animate-on-scroll">
         <div class="contact-background"></div>
         <h2 id="contact-us" class="section-title">Contact Us</h2>
@@ -1766,6 +1801,7 @@
 
     <div id="notification" class="notification">Stay Tuned!</div>
 
+    <br>
 
     <footer>
         <div class="footer-logo">
@@ -2082,7 +2118,7 @@ window.addEventListener('load', function() {
 
 /*----------------------------------------------------------------------------------Security Website-----------------------------------------------------------------------------------------------*/
 // Mencegah klik kanan
-document.addEventListener('contextmenu', function(e) {
+/*document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
@@ -2137,7 +2173,7 @@ document.ondragstart = function() { return false; };
 
 console.log = function() {}; // Menonaktifkan console.log
 console.warn = function() {}; // Menonaktifkan console.warn
-console.error = function() {}; // Menonaktifkan console.error
+console.error = function() {}; // Menonaktifkan console.error*/
 
     </script>
 </body>
