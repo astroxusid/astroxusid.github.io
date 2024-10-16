@@ -553,13 +553,17 @@
     background-size: contain;
     background-color: #343742;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     min-height: 100vh; /* Gunakan min-height alih-alih height */
+    min-width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     position: relative;
     overflow: hidden; /* Mencegah konten keluar dari section */
+    padding-top: 78px;
+    padding-left: 18vw;
+    padding-right: 18vw;
 }
 
 .about-us.animate #aboutTitle {
@@ -575,27 +579,22 @@
     text-align: center;
     color: white;
     font-family: 'Agency FB', sans-serif;
-    max-width: 80%;
-    padding: 20px;
-    position: absolute; /* Posisi absolut untuk kontrol lebih baik */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Pusatkan secara vertikal dan horizontal */
-    width: 100%; /* Gunakan lebar penuh */
+    /*transform: translate(-50%, -50%);*/ /* Pusatkan secara vertikal dan horizontal */
+    
 }
 
 #aboutTitle {
         font-size: 4rem;
-        color: #ffffff; /* Warna teks putih */
+        color: #ffffff;
         text-shadow: 
             0 0 4px rgba(255, 255, 255, 0.8),
             0 0 8px rgba(255, 255, 255, 0.8);
-        -webkit-text-stroke: 1px #ffffff; /* Memberikan outline putih */
+        -webkit-text-stroke: 1px #ffffff;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 1.5rem;
-        padding-top: 3rem;
+        /*padding-top: 3rem;*/
 
         opacity: 0;
         transform: translateY(-20px);
@@ -604,7 +603,7 @@
 
 
 #aboutDescription {
-    font-size: 1.5rem; /* Mengurangi ukuran font untuk membuat teks lebih rapat */
+    font-size: 2rem; /* Mengurangi ukuran font untuk membuat teks lebih rapat */
     margin-top: 0.2rem; /* Mengurangi jarak antar paragraf */
     animation: slideInLeft 2s ease forwards;
 
@@ -667,23 +666,20 @@
 /* Media Queries */
 @media (max-width: 1920px) {
     #aboutTitle {
-        font-size: 5rem;
-        margin-top: -28rem;
+        font-size: 4rem;
     }
     #aboutDescription {
-        font-size: 2.7rem;
-        margin-top: 40px;
+        font-size: 2rem;
     }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1367px) {
     #aboutTitle {
+        margin-bottom: 1.5rem;
         font-size: 3rem;
-        margin-top: -20rem;
     }
     #aboutDescription {
-        font-size: 1.9rem;
-        margin-top: 40px;
+        font-size: 1.5rem;
     }
 }
 
