@@ -417,32 +417,37 @@
         /* Media Queries */
 
         @media (max-width: 480px) {
-    .main-text {
-        padding-top: 180px;
-    }
-    #mainTitle { font-size: 2.5rem; }
-    #subTitle { font-size: 1.5rem; }
-}
-
-        @media (max-width: 500px) {
         .main-text {
-        padding-top: 150px;
-        max-width: 80%;
-        margin: 0 auto;
-        text-align: center;
+            padding-top: 180px;
+            }
+            #mainTitle { font-size: 2.5rem; }
+            #subTitle { font-size: 1.5rem; }
         }
+
+
+        @media (max-width: 580px) {
+            .main-text {
+                padding-top: 150px;
+                max-width: 80%;
+                margin: 0 auto;
+                text-align: center;
+            }
             #mainTitle {
-            font-size: 3rem;
-        }
+                font-size: 3rem;
+            }
             #subTitle { 
                 font-size: 1.8rem; 
-        }
+            }
             .main-text h1 {
                 font-size: 2rem; /* Ukuran font lebih kecil */
-        }
+            }
             .main-text h2 {
                 font-size: 1.5rem; /* Ukuran font lebih kecil */
-        }
+            }
+            .left-image {
+                height: 280px; /* Membuat gambar lebih besar */
+                width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
@@ -469,9 +474,30 @@
             }
             .main-menu {
                 background-image: url('img/Home/Mobile-Background.png');
+                background-size: cover;
+                background-position: top center;
                 justify-content: center;
                 align-items: center;
                 padding-top: 80px;
+                width: 100%;
+                height: 180vw;
+
+
+            }
+            .left-image {
+                display: block;
+                background-image: url('img/Home/gambar-VIENNE.png');
+                background-size: contain; /* Pastikan gambar tidak terpotong */
+                background-position: bottom; /* Gambar di tengah */
+                background-repeat: no-repeat;
+                width: 100%; /* Lebar penuh pada layar kecil */
+                height: 580px; /* Membuat gambar lebih besar */
+                margin: 0 auto; /* Center gambar secara horizontal */
+                position: absolute; /* Agar bisa diposisikan di paling bawah */
+                bottom: 0; /* Posisikan di paling bawah */
+                left: 0;
+                right: 0;
+
             }
             .main-text {
                 text-align: center;
@@ -485,21 +511,6 @@
         }
 
         #subTitle { font-size: 2rem; }
-
-            .left-image {
-                display: block;
-                background-image: url('img/Home/gambar-VIENNE.png');
-                background-size: contain; /* Pastikan gambar tidak terpotong */
-                background-position: center; /* Gambar di tengah */
-                background-repeat: no-repeat;
-                width: 100%; /* Lebar penuh pada layar kecil */
-                height: 400px; /* Membuat gambar lebih besar */
-                margin: 0 auto; /* Center gambar secara horizontal */
-                position: absolute; /* Agar bisa diposisikan di paling bawah */
-                bottom: 0; /* Posisikan di paling bawah */
-                left: 0;
-                right: 0;
-            }
 
         }
 
@@ -553,13 +564,17 @@
     background-size: contain;
     background-color: #343742;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     min-height: 100vh; /* Gunakan min-height alih-alih height */
+    min-width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     position: relative;
     overflow: hidden; /* Mencegah konten keluar dari section */
+    padding-top: 78px;
+    padding-left: 18vw;
+    padding-right: 18vw;
 }
 
 .about-us.animate #aboutTitle {
@@ -575,27 +590,22 @@
     text-align: center;
     color: white;
     font-family: 'Agency FB', sans-serif;
-    max-width: 80%;
-    padding: 20px;
-    position: absolute; /* Posisi absolut untuk kontrol lebih baik */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Pusatkan secara vertikal dan horizontal */
-    width: 100%; /* Gunakan lebar penuh */
+    /*transform: translate(-50%, -50%);*/ /* Pusatkan secara vertikal dan horizontal */
+    
 }
 
 #aboutTitle {
         font-size: 4rem;
-        color: #ffffff; /* Warna teks putih */
+        color: #ffffff;
         text-shadow: 
             0 0 4px rgba(255, 255, 255, 0.8),
             0 0 8px rgba(255, 255, 255, 0.8);
-        -webkit-text-stroke: 1px #ffffff; /* Memberikan outline putih */
+        -webkit-text-stroke: 1px #ffffff;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 1.5rem;
-        padding-top: 3rem;
+        /*padding-top: 3rem;*/
 
         opacity: 0;
         transform: translateY(-20px);
@@ -604,7 +614,7 @@
 
 
 #aboutDescription {
-    font-size: 1.5rem; /* Mengurangi ukuran font untuk membuat teks lebih rapat */
+    font-size: 2rem; /* Mengurangi ukuran font untuk membuat teks lebih rapat */
     margin-top: 0.2rem; /* Mengurangi jarak antar paragraf */
     animation: slideInLeft 2s ease forwards;
 
@@ -614,10 +624,124 @@
     transition-delay: 0.2s;
 }
 
+/* Responsif untuk dimensi lebih kecil */
+
+@media (orientation: portrait) and (max-width : 768px) {
+    .about-us {
+        background-image: url('img/Home/Mobile-About-Background.png');
+        background-size: contain;
+        background-position: center;
+        /*padding-top: 5%;*/ /* Menggeser konten lebih ke atas di layar kecil */
+
+        background-color: #343742;
+        background-repeat: no-repeat;
+
+        max-width: 100vw;
+        width: 100vw;
+        height: 100vh;
+        min-height: 680px;
+        /*
+        min-height: auto;
+        min-width: 100vw;*/
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        position: relative;
+        overflow: hidden; /* Mencegah konten keluar dari section */
+        padding-top: 0px;
+        padding-left: 18vw;
+        padding-right: 18vw;
+    }
+
+    .about-text {
+        text-align: center;
+        color: white;
+        font-family: 'Agency FB', sans-serif;
+        transform: translateY(-120%); /* Pusatkan secara vertikal dan horizontal */
+
+        min-height: 20px;
+        height: 200px;
+
+        /*outline: 5px solid blue;
+        border-radius: 4px;*/
+        
+    }
+
+    #aboutTitle {
+        font-size: 8vw;
+        margin-bottom: 1.2rem;
+    }
+
+    #aboutDescription {
+        font-size: 3vw;
+        margin-top: 0.5rem;
+        line-height: 1.3; /* Mengurangi spasi antar baris pada layar kecil */
+    }
+}
+
+@media (orientation: portrait) and (max-width : 500px) {
+    .about-us {
+        background-image: url('img/Home/Mobile-About-Background.png');
+        background-size: contain;
+        background-position: center;
+        /*padding-top: 5%;*/ /* Menggeser konten lebih ke atas di layar kecil */
+
+        background-color: #343742;
+        background-repeat: no-repeat;
+
+        max-width: 100vw;
+        width: 100vw;
+        height: 100vh;
+        min-height: 680px;
+        /*
+        min-height: auto;
+        min-width: 100vw;*/
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        position: relative;
+        overflow: hidden; /* Mencegah konten keluar dari section */
+        padding-top: 0px;
+        padding-left: 18vw;
+        padding-right: 18vw;
+    }
+
+    .about-text {
+        text-align: center;
+        color: white;
+        font-family: 'Agency FB', sans-serif;
+        transform: translateY(-60%); /* Pusatkan secara vertikal dan horizontal */
+
+        min-height: 20px;
+        height: 200px;
+/*
+        outline: 5px solid blue;
+        border-radius: 4px;*/
+        
+    }
+
+    #aboutTitle {
+        font-size: 8vw;
+        margin-bottom: 1.2rem;
+    }
+
+    #aboutDescription {
+        font-size: 3vw;
+        margin-top: 0.5rem;
+        line-height: 1.3; /* Mengurangi spasi antar baris pada layar kecil */
+    }
+}
+
+
+
 .about-us.animate #aboutDescription {
         opacity: 1;
         transform: translateY(0);
-    }
+}
 
 /* Animasi */
 @keyframes fadeInUp {
@@ -639,118 +763,6 @@
     100% {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-/* Responsif untuk dimensi lebih kecil */
-@media (max-width: 768px) {
-    .about-us {
-        background-image: url('img/Home/Mobile-About-Background.png');
-        background-size: cover;
-        background-position: center;
-        padding-top: 5%; /* Menggeser konten lebih ke atas di layar kecil */
-    }
-
-    #aboutTitle {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    #aboutDescription {
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-        line-height: 1.3; /* Mengurangi spasi antar baris pada layar kecil */
-    }
-}
-
-
-/* Media Queries */
-@media (max-width: 1920px) {
-    #aboutTitle {
-        font-size: 5rem;
-        margin-top: -28rem;
-    }
-    #aboutDescription {
-        font-size: 2.7rem;
-        margin-top: 40px;
-    }
-}
-
-@media (max-width: 1366px) {
-    #aboutTitle {
-        font-size: 3rem;
-        margin-top: -20rem;
-    }
-    #aboutDescription {
-        font-size: 1.9rem;
-        margin-top: 40px;
-    }
-}
-
-@media (max-width: 1536px) {
-    #aboutTitle {
-        font-size: 2.8rem;
-        margin-top: -20rem;
-    }
-    #aboutDescription {
-        font-size: 1.8rem;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-us {
-        background-image: url('img/Home/Mobile-About-Background.png');
-        background-size: contain;
-        background-color: #343742;
-        padding-top: 5%;
-    }
-    #aboutTitle {        
-        font-size: 2.9rem;
-        margin-top: -30rem;
-    }
-    #aboutDescription {
-        font-size: 1.9rem;
-        margin-top: 0.2rem;
-        line-height: 1.3;
-    }
-}
-
-@media (max-width: 580px) {
-    .about-us {
-        background-image: url('img/Home/Mobile-About-Background.png');
-        background-size: contain;
-        background-color: #343742;
-        padding-top: 5%;
-    }
-    #aboutTitle {
-        font-size: 1.5rem;
-        margin-top: -20rem;
-    }
-    #aboutDescription {
-        font-size: 1.2rem;
-        margin-top: 0;
-        line-height: 1.3;
-    }
-}
-
-@media (max-width: 395px) {
-    #aboutTitle {
-        font-size: 1.2rem;
-        margin-top: -18rem;
-    }
-    #aboutDescription {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 360px) {
-    #aboutTitle {
-        font-size: 1.2rem;
-        margin-top: -18rem;
-    }
-    #aboutDescription {
-        font-size: 1rem;
     }
 }
 
@@ -788,7 +800,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-color: #343742;
-        background-position: center;
+        background-position: top center;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -1082,6 +1094,11 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
+        }
+        .card {
+            width: 280px;
+            height: 320px;  /* Mengurangi tinggi untuk mendekati persegi */
+            min-height: unset;  /* Menghapus min-height */
         }
     }
 
@@ -2171,8 +2188,8 @@ document.ondragstart = function() { return false; };
 console.log = function() {}; // Menonaktifkan console.log
 console.warn = function() {}; // Menonaktifkan console.warn
 console.error = function() {}; // Menonaktifkan console.error
-
 */
+
     </script>
 </body>
 </html>
