@@ -596,11 +596,14 @@
 
 #aboutTitle {
         font-size: 4rem;
-        color: #ffffff;
-        text-shadow: 
+        color: white;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+
+        /*text-shadow: 
             0 0 4px rgba(255, 255, 255, 0.8),
             0 0 8px rgba(255, 255, 255, 0.8);
-        -webkit-text-stroke: 1px #ffffff;
+        -webkit-text-stroke: 1px #ffffff;*/
+
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -820,7 +823,7 @@
         font-size: 2.5rem;
         opacity: 0;
         overflow: hidden;
-        border-right: .15em solid #fff;
+        border-right: .15em solid white;
         white-space: nowrap;
         margin: 0 auto;
         letter-spacing: .15em;
@@ -843,12 +846,18 @@
 
     .section-title {
         font-size: 2.5rem;
-        color: #ffffff; /* Mengubah warna menjadi putih */
+        color: white; /* Mengubah warna menjadi putih */
+        
         text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.8)
+        -webkit-text-stroke: 1px white;
+
+        /*text-shadow: 
             0 0 10px rgba(255, 255, 255, 0.8),
             0 0 20px rgba(255, 255, 255, 0.8),
-            0 0 30px rgba(255, 255, 255, 0.8); /* Efek menyala putih */
-        -webkit-text-stroke: 1px #ffffff; /* Memberikan outline putih */
+            0 0 30px rgba(255, 255, 255, 0.8); 
+        -webkit-text-stroke: 1px #ffffff;*/
+
         margin-bottom: 50px;
         transition: all 0.3s ease;
         font-weight: bold;
@@ -1350,7 +1359,7 @@
         .contact-info {
             font-family: 'Agency FB', sans-serif;
             font-size: 1rem;
-            color: #ffffff;
+            color: white;
         }
 
         .character-image-container {
